@@ -3,9 +3,10 @@ package com.company.classes;
 import java.util.Comparator;
 
 public class MemoryBlock {
+    public Process process;
     int start;
     int end;
-    Process process;
+
 
     public static Comparator<MemoryBlock> byEnd = Comparator.comparingInt(o -> o.end);
 
@@ -17,6 +18,6 @@ public class MemoryBlock {
 
     @Override
     public String toString() {
-        return "MemoryBlock{" +"start=" + start +"\tend=" + end +"P"+process+'}';
+        return "MemoryBlock{" +"start=" + start +"\tend=" + end  + "P" +process+'}';
     }
 }

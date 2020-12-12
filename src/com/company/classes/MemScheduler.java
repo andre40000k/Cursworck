@@ -14,8 +14,9 @@ public static int SearchMB(int size)
         if (memoryBlocks.get(i + 1).start - memoryBlocks.get(i).end >= size+1)
             return memoryBlocks.get(i).end + 1;
     }
-    if(Configuration.memory - memoryBlocks.get(memoryBlocks.size()-1).end >=size+1)
+    if(Configuration.memory - memoryBlocks.get(memoryBlocks.size()-1).end >= size+1)
         return memoryBlocks.get(memoryBlocks.size()-1).end+1;
+
     else
         return Configuration.memory;
 }
@@ -26,7 +27,7 @@ public static boolean fillMB(Process process)
 
     if (_start!= Configuration.memory)
     {
-        memoryBlocks.add(new MemoryBlock(_start, _start+process.getMemory(),process));
+        memoryBlocks.add(new MemoryBlock(_start, _start+process.getMemory(), process));
         return true;
     }
     else

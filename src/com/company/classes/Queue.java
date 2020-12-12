@@ -73,7 +73,6 @@ public class Queue {
         queue.sort(Process.byPriority);
         if(queue.size()!=0) {
             Process _tmp = queue.get(0);
-            this.Remove(_tmp);
             _tmp.setStatus(Status.Running);
             return _tmp;
         }
