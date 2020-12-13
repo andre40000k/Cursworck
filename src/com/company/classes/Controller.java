@@ -110,15 +110,6 @@ public class Controller {
         runBTN.setDisable(false);
         stopBTN.setDisable(false);
     }
-    /*protected void pauseBTN_Click()
-    {
-        if(Main.emuThread.isAlive())
-            Main.emuThread.suspend();
-
-        pausBTN.setDisable(true);
-        runBTN.setDisable(false);
-        stopBTN.setDisable(false);
-    }*/
 
     @FXML
     protected void stopBTN_Click()
@@ -127,8 +118,8 @@ public class Controller {
             Main.emuThread.stop();
 
         MemScheduler.clearMem();
-        ClockGenerator.clearTime();
-        Main.emuThread = new Thread(new TLauncher());
+        TacktGenerator.clearTime();
+        Main.emuThread = new Thread(new Streams());
         queueTable.setItems(null);
         rejectedTable.setItems(null);
         doneTable.setItems(null);

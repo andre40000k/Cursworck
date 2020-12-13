@@ -1,6 +1,6 @@
 package com.company.classes;
 
-public class TLauncher implements Runnable {
+public class Streams implements Runnable {
     public static Scheduler sc;
 
     @Override
@@ -10,3 +10,4 @@ public class TLauncher implements Runnable {
     }
 
 }
+

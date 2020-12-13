@@ -21,10 +21,10 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("windows/sample.fxml"));
         Parent root = loader.load();
         controller =  loader.getController();
-        emuThread = new Thread(new com.company.classes.TLauncher());
+        emuThread = new Thread(new com.company.classes.Streams());
 
 
-        stage.setTitle("VTaskViewer");
+        stage.setTitle("Curs");
         stage.setScene(new Scene(root, 800, 500));
         stage.show();
 

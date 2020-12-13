@@ -5,7 +5,7 @@ import com.company.interfaces.ITime;
 import java.util.ArrayList;
 import java.util.TimerTask;
 
-public class ClockGenerator extends TimerTask {
+public class TacktGenerator extends TimerTask {
     ArrayList<ITime> listenersList = new ArrayList<>();
 
     private static int tick;

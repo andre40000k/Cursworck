@@ -50,7 +50,7 @@ public class Queue {
     public void cancelOutdated()
     {
             for (int i=queue.size()-1; i>=0;i--)
-                if (ClockGenerator.getTick() >= queue.get(i).getTimeIn() * Configuration.PRmMultiplier)
+                if (TacktGenerator.getTick() >= queue.get(i).getTimeIn() * Configuration.PRmMultiplier)
                     cancelProcess(queue.get(i));
     }
 

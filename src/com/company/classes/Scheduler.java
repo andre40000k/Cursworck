@@ -11,7 +11,7 @@ public class Scheduler implements ITime {
 
     CPU cpu;
     MemScheduler memScheduler;
-    ClockGenerator clockGenerator;
+    TacktGenerator tacktGenerator;
 
     public Scheduler() {
         queue = new Queue();
@@ -20,16 +20,16 @@ public class Scheduler implements ITime {
 
         this.cpu = new CPU(Configuration.coreCount);
         this.memScheduler = new MemScheduler();
-        this.clockGenerator = new ClockGenerator();
+        this.tacktGenerator = new TacktGenerator();
 
-        this.clockGenerator.addListener(cpu);
-        this.clockGenerator.addListener(this);
+        this.tacktGenerator.addListener(cpu);
+        this.tacktGenerator.addListener(this);
     }
 
     public void Start()
     {
         preLaunchInit();
-        this.clockGenerator.run();
+        this.tacktGenerator.run();
     }
 
     private void preLaunchInit()
@@ -68,7 +68,7 @@ public class Scheduler implements ITime {
 
     private void clearOutdated()
     {
-        if(ClockGenerator.getTick()% Configuration.rmOldPIterator ==0) {
+        if(TacktGenerator.getTick()% Configuration.rmOldPIterator ==0) {
             queue.cancelOutdated();
         }
     }

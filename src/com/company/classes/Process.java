@@ -18,7 +18,7 @@ public class Process {
         this.memory = Utils.getRandInt(Configuration.minMemsize, Configuration.maxMemsize);
         this.priority= Utils.getRandInt(Configuration.maxPriority);
         this.tickWorks = Utils.getRandInt(Configuration.minTickWork, Configuration.maxTickWork);
-        this.timeIn = ClockGenerator.getTick();
+        this.timeIn = TacktGenerator.getTick();
         this.bursTime=0;
         this.status = Status.Ready;
     }
